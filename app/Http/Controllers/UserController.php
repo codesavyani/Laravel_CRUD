@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -35,7 +35,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate input
+        
+
+
+        User::create($request->all());
+
+        return redirect()->route('user.index')->with('Success' , 'User added successfully');
     }
 
     /**
