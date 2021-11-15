@@ -26,7 +26,9 @@
             <td>{{ $user->Email }}</td>
             <td>{{ $user->City }}</td>
             <td>{{ $user->State }}</td>
-            
+            <!-- <td><a href={{ route('user.show', $user->id) }}>View Details</a></td> -->
+            <td><a href={{ route('user.edit', $user->id) }}>Edit</a></td>
+            <td><a href={{ route('user.destroy', $user->id) }}>Delete</a></td>
         </tr>
     @endforeach
 
