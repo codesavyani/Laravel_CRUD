@@ -22,6 +22,18 @@ copy .env.example .env
 
 Fill database details in .env file
 
+Install composer dependencies
+
+```
+composer install
+```
+
+Generate app key
+
+```
+php artisan key:generate
+```
+
 Run migrations
 
 ```
