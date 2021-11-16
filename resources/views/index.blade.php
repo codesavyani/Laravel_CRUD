@@ -2,6 +2,12 @@
 
 @section('content')
 
+{{ $_GET['msg'] }}
+
+@if(!empty($msg))
+<h3>{{ $msg }}</h3>
+@endif
+
 <h2>Index</h2>
 
 <div>

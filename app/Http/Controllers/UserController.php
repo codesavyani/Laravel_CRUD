@@ -16,7 +16,6 @@ class UserController extends Controller
     {
         //
         $users = User::all();
-        // return($users);
 
         return view('index', ['users' => $users]);
     }
@@ -45,7 +44,7 @@ class UserController extends Controller
 
         User::create($request->all());
 
-        return redirect()->route('user.index')->with('Success' , 'User added successfully');
+        return redirect()->route('user.index' , ['msg' => 'User added successfully']);
     }
 
     /**
@@ -81,7 +80,7 @@ class UserController extends Controller
     {
         $user->update($request->all());
 
-        return redirect()->route('user.index')->with('Success' , 'User updated successfully');
+        return redirect()->route('user.index' , ['msg' => 'User updated successfully']);
     }
 
     /**
@@ -94,7 +93,7 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->route('user.index')->with('Success' , 'User deleted successfully');
+        return redirect()->route('user.index', ['msg' => 'User deleted successfully']);
     }
 
 }
