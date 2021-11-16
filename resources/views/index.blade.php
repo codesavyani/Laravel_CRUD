@@ -27,8 +27,15 @@
             <td>{{ $user->City }}</td>
             <td>{{ $user->State }}</td>
             <!-- <td><a href={{ route('user.show', $user->id) }}>View Details</a></td> -->
-            <td><a href={{ route('user.edit', $user->id) }}>Edit</a></td>
-            <td><a href={{ route('user.destroy', $user->id) }}>Delete</a></td>
+            {{-- <td><a href={{ route('user.edit', $user->id) }}>Edit</a></td> --}}
+            <td>
+                <form action={{ route('user.destroy', $user->id) }} method='POST'>
+                @csrf
+                @method('DELETE')
+                <a href={{ route('user.edit', $user->id) }}>Edit</a>
+                <button type="submit">Delete</button>
+                </form>
+            </td>
         </tr>
     @endforeach
 
